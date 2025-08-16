@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import { Roboto } from "next/font/google";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { SidebarProvider } from "@/contexts/SidebarContext";
+import Sidebar from "@/components/layout/Sidebar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"], // load đủ weight để dùng font-extralight, light, bold
+  variable: "--font-roboto", // optional, để dùng CSS var
 });
 
 export const metadata: Metadata = {
@@ -24,10 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${roboto.variable} antialiased`}>
+        <div className="min-h-screen bg-transparent">
+          <SidebarProvider totalSections={5}>
+            <ThemeProvider>
+              <Navbar />
+              <Sidebar />
+              <main className="w-full">{children}</main>
+            </ThemeProvider>
+          </SidebarProvider>
+        </div>
       </body>
     </html>
   );
