@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -6,7 +12,6 @@ export default function ContactPage() {
       </h1>
 
       <div className="mt-auto grid grid-cols-1 md:grid-cols-2 w-full h-[80vh]">
-        {/* Bên trái: Google Map */}
         <div className="w-full h-full">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.611348031592!2d126.95013237630662!3d37.39943923378266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b60d8e2a2b39d%3A0xa3df4e3ac82b1c6!2z66mU7Yq47Iuc7Iqk!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr"
@@ -19,7 +24,6 @@ export default function ContactPage() {
           ></iframe>
         </div>
 
-        {/* Bên phải: Thông tin liên hệ */}
         <div className="bg-[#0a1444] text-white flex flex-col justify-between p-10">
           <div>
             <p>
