@@ -14,8 +14,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    default: "Home - Maxius",
-    template: "%s - Maxius",
+    default: "MAXIUS - HOME",
+    template: "MAXIUS - %s",
   },
   description: "Maxius Landing Page!",
   twitter: {

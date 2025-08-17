@@ -85,7 +85,7 @@ export default function ContactSection({ columns }: { columns: Column[] }) {
                 {col.title}
               </h3>
 
-              <div className="bg-white/5 transition-all duration-300 relative group border-r min-h-96">
+              <div className="bg-white/5 transition-all duration-300 relative group border-r border-black min-h-96">
                 <div className="pr-5 max-h-96 overflow-hidden group-hover:overflow-y-auto custom-scrollbar text-xs pt-12 leading-6">
                   {col.content}
                 </div>
