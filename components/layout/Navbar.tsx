@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Example } from "../ui/AnimatedHamburgerButton";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useSidebar } from "@/contexts/SidebarContext";
-import Link from "next/link";
+import LocaleSwitcher from "../ui/LocaleSwitcher";
+import { Link } from "@/i18n/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -18,7 +19,7 @@ const Navbar = () => {
   const textColor = theme === "dark" ? "text-white" : "text-black";
 
   useEffect(() => setMounted(true), []);
-  // close sidebar khi đổi route
+
   useEffect(() => close(), [pathname, close]);
 
   if (!mounted) return null;
@@ -31,8 +32,8 @@ const Navbar = () => {
       className="fixed top-0 w-full z-[97] bg-transparent"
     >
       <div className="container mx-auto px-6">
-        <div className="flex h-28 items-center justify-between">
-          {pathname === "/" ? (
+        <div className="flex h-28 items-center justify-between relative">
+          {pathname === "/en" || pathname === "/ko" ? (
             <a
               onClick={() => navigate(0)} // click vào logo sẽ về section 0
               className={`text-xl font-semibold tracking-wide ${textColor} transition-colors duration-300 cursor-pointer`}
@@ -42,14 +43,17 @@ const Navbar = () => {
           ) : (
             <Link
               href="/"
+              onClick={() => navigate(0)}
               className={`text-xl font-semibold tracking-wide ${textColor} transition-colors duration-300 cursor-pointer`}
             >
               MAXIUS
             </Link>
           )}
 
-          {/* Hamburger controlled qua context */}
           <Example active={isOpen} onToggle={toggle} />
+          <div className="absolute right-0 bottom-0 ">
+            <LocaleSwitcher />
+          </div>
         </div>
       </div>
     </motion.nav>

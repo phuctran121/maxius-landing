@@ -1,5 +1,5 @@
 // app/page.tsx
-import HomeClient, { type Theme } from "../components/layout/HomeClient";
+import HomeClient, { type Theme } from "../../components/layout/HomeClient";
 
 import HeroSection, {
   sectionTheme as heroTheme,
@@ -17,11 +17,20 @@ import FooterSection, {
   sectionTheme as footerTheme,
 } from "@/components/sections/FooterSection";
 
-import { heroData } from "@/constants/hero.data";
+import { getHeroData } from "@/constants/hero.data";
+
 import { featuresData } from "@/constants/features.data";
 import { ContactData } from "@/constants/Contact.data";
 
-export default function Page() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const heroData = await getHeroData(locale);
+
   const themes: Theme[] = [
     heroTheme,
     aboutTheme,

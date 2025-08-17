@@ -4,12 +4,15 @@ import bgImage from "@/assets/images/banner-black.png";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 export const sectionTheme: "light" | "dark" = "dark";
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const t = useTranslations("about");
+
   return (
     <SectionFormat backgroundImage={bgImage}>
       <div
@@ -50,15 +53,9 @@ export default function AboutSection() {
               text-left sm:text-justify
             "
           >
-            1. <span className="text-[#FF9933]">Self-produced</span>{" "}
-            semiconductors &nbsp; 2. Production and Sales of{" "}
-            <span className="text-[#FF9933]">H</span>igh-
-            <span className="text-[#FF9933]">P</span>erformance{" "}
-            <span className="text-[#FF9933]">P</span>ervers with
-            self-manufactured semiconductors &nbsp; 3. Construction of operative{" "}
-            <span className="text-[#FF9933]">Blockchain IDC</span> based on
-            high-performance servers &nbsp; 4. Establish solution relating to
-            Blockchain <span className="text-[#FF9933]">(IPFS)</span>
+            {t.rich("content", {
+              hl: (chunks) => <span className="text-[#FF9933]">{chunks}</span>,
+            })}
           </p>
         </motion.div>
       </div>

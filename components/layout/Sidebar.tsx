@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useSidebar } from "@/contexts/SidebarContext";
 import { usePathname } from "next/navigation";
+import { stripLocale } from "@/utils/utils";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -108,7 +109,8 @@ export default function Sidebar() {
                       >
                         {link.name}
                       </button>
-                    ) : link.name === "Home" && pathname === "/" ? (
+                    ) : link.name === "Home" &&
+                      (pathname === "/en" || pathname === "/ko") ? (
                       <a
                         href="#"
                         onClick={(e) => {
@@ -124,11 +126,14 @@ export default function Sidebar() {
                       </a>
                     ) : (
                       <Link
-                        href={link.path}
+                        href={`${link.path}`}
                         className={`block text-2xl sm:text-3xl lg:text-4xl font-light hover:text-[#f93] transition ${
                           isActive ? "text-[#f93]" : ""
                         }`}
-                        onClick={close}
+                        onClick={() => {
+                          navigate(0);
+                          close();
+                        }}
                       >
                         {link.name}
                       </Link>
