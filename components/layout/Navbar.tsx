@@ -35,6 +35,7 @@ const Navbar = () => {
         <div className="flex h-28 items-center justify-between relative">
           {pathname === "/en" || pathname === "/ko" ? (
             <a
+              href="#"
               onClick={() => navigate(0)} // click vào logo sẽ về section 0
               className={`text-xl font-semibold tracking-wide ${textColor} transition-colors duration-300 cursor-pointer`}
             >

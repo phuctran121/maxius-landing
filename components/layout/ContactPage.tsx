@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
+
   return (
     <div className="min-h-screen flex flex-col">
       <motion.h1
@@ -35,9 +38,9 @@ export default function ContactPage() {
         <div className="bg-[#0a1444] text-white flex flex-col justify-between p-10">
           <div>
             <p>
-              5F 12-30, Simin-daero 327beon-gil, Dongan-gu,
+              {t("address1")}
               <br />
-              Anyang-si, Gyeonggi-do, Republic of Korea
+              {t("address2")}
             </p>
             <p className="mt-3">Tel: 02. 851. 2662</p>
             <p>Fax: 02. 851. 2655</p>
