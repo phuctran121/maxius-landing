@@ -39,7 +39,7 @@ export default function ContactSection({ columns }: { columns: Column[] }) {
                   transition: { duration: 0 },
                 }
           }
-          className="text-5xl md:text-8xl font-bold uppercase mb-16"
+          className="text-5xl text-black md:text-8xl font-bold uppercase mb-16"
         >
           STORY
         </motion.h2>
@@ -81,7 +81,9 @@ export default function ContactSection({ columns }: { columns: Column[] }) {
                 snap-start
               "
             >
-              <h3 className="text-4xl font-bold mb-6">{col.title}</h3>
+              <h3 className="text-4xl text-black font-bold mb-6">
+                {col.title}
+              </h3>
 
               <div className="bg-white/5 transition-all duration-300 relative group border-r min-h-96">
                 <div className="pr-5 max-h-96 overflow-hidden group-hover:overflow-y-auto custom-scrollbar text-xs pt-12 leading-6">

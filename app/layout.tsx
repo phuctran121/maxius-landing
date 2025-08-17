@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
-        <div className="min-h-screen bg-transparent">
+        <div className="min-h-screen bg-white">
           <SidebarProvider totalSections={5}>
             <ThemeProvider>
               <Navbar />

@@ -59,7 +59,7 @@ const navLinks = [
 ];
 
 export default function Sidebar() {
-  const { isOpen, openMenu, setOpenMenu, close } = useSidebar();
+  const { isOpen, openMenu, setOpenMenu, close, navigate } = useSidebar();
   const pathname = usePathname();
 
   return (
@@ -87,7 +87,7 @@ export default function Sidebar() {
               bg-gradient-to-b from-[#0B1438] to-[#162551] 
               text-white shadow-lg z-50 
               overflow-y-auto flex flex-col 
-              pt-[20vh]
+              pt-[20vh] no-scrollbar
             "
           >
             {/* Nav */}
@@ -102,22 +102,32 @@ export default function Sidebar() {
                         onClick={() =>
                           setOpenMenu(openMenu === link.name ? null : link.name)
                         }
-                        className={`block w-full text-left cursor-pointer 
-                          text-2xl sm:text-3xl lg:text-4xl 
-                          font-light hover:text-[#f93] transition
-                          ${openMenu === link.name ? "text-[#f93]" : ""}
-                        `}
+                        className={`block w-full text-left cursor-pointer text-2xl sm:text-3xl lg:text-4xl font-light hover:text-[#f93] transition ${
+                          openMenu === link.name ? "text-[#f93]" : ""
+                        }`}
                       >
                         {link.name}
                       </button>
+                    ) : link.name === "Home" && pathname === "/" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(0);
+                          close();
+                        }}
+                        className={`block text-2xl sm:text-3xl lg:text-4xl font-light hover:text-[#f93] transition ${
+                          isActive ? "text-[#f93]" : ""
+                        }`}
+                      >
+                        {link.name}
+                      </a>
                     ) : (
                       <Link
                         href={link.path}
-                        className={`block 
-                          text-2xl sm:text-3xl lg:text-4xl 
-                          font-light hover:text-[#f93] transition
-                          ${isActive ? "text-[#f93]" : ""}
-                        `}
+                        className={`block text-2xl sm:text-3xl lg:text-4xl font-light hover:text-[#f93] transition ${
+                          isActive ? "text-[#f93]" : ""
+                        }`}
                         onClick={close}
                       >
                         {link.name}

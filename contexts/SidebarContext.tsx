@@ -36,7 +36,10 @@ export function SidebarProvider({
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
-  const close = useCallback(() => setIsOpen(false), []);
+  const close = useCallback(() => {
+    setIsOpen(false);
+    setOpenMenu(null);
+  }, []);
 
   // section navigation state
   const { current, navigate } = useSectionNavigation(totalSections, 600);

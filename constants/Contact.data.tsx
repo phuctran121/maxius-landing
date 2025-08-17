@@ -51,9 +51,11 @@ export const ContactData = [
     content: (
       <>
         <p>
-          <strong>1000 corporate Partners</strong>
+          <strong className="font-bold text-black">
+            1000 corporate Partners
+          </strong>
         </p>
-        <p>
+        <p className="text-black/90">
           Cheongwadae, KHNP, Ministry of National Defense, Gunpo city, Korea
           Agro-Fisheries&Food Trade Corporation, JeollaNamdo, KMRB, JDC, Korea
           Housing Finance Corporation, Gyeonggi Provincial Police Agency, NCIS,
@@ -61,13 +63,17 @@ export const ContactData = [
           Workers Compensation&Welfare Service
         </p>
 
-        <p className="mt-2">
-          <strong>250 Additional corporate Partners</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            250 Additional corporate Partners
+          </strong>
           <br />
           KAIST, Seoul National University, Dongguk
         </p>
-        <p className="mt-2">
-          <strong>250 Additional corporate Partners</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            250 Additional corporate Partners
+          </strong>
           <br />
           Cheongwadae, KHNP, Ministry of National Defense, Gunpo city, Korea
           Agro-Fisheries&Food Trade Corporation, JeollaNamdo, KMRB, JDC, Korea
@@ -75,13 +81,17 @@ export const ContactData = [
           KPIC, Supreme Court of Korea, IPET, LH, National Gugak Center, Korea
           Workers Compensation&Welfare Service
         </p>
-        <p className="mt-2">
-          <strong>250 Additional corporate Partners</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            250 Additional corporate Partners
+          </strong>
           <br />
           KAIST, Seoul National University, Dongguk
         </p>
-        <p className="mt-2">
-          <strong>250 Additional corporate Partners</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            250 Additional corporate Partners
+          </strong>
           <br />
           Cheongwadae, KHNP, Ministry of National Defense, Gunpo city, Korea
           Agro-Fisheries&Food Trade Corporation, JeollaNamdo, KMRB, JDC, Korea
@@ -96,42 +106,56 @@ export const ContactData = [
     title: "Patents",
     content: (
       <>
-        <p>
-          <strong>High-speed data I/O semiconductor Chip</strong>
+        <p className="text-black/90">
+          <strong className="font-bold text-black">
+            High-speed data I/O semiconductor Chip
+          </strong>
           <br />
           FPGA/CPLD/ASIC design and manufacturing technology, possess TPU
           development capability
         </p>
-        <p className="mt-2">
-          <strong>Intelligent Pattern Analysis Algorithm</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Intelligent Pattern Analysis Algorithm
+          </strong>
           <br />
           Hybrid Cache algorithm that follows data pattern analysis
         </p>
-        <p className="mt-2">
-          <strong>OS and SSD optimization</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            OS and SSD optimization
+          </strong>
           <br />
           Device Driver optimization technology differing for each OS, storage
           resource management technology
         </p>
-        <p>
-          <strong>High-speed data I/O semiconductor Chip</strong>
+        <p className="text-black/90">
+          <strong className="font-bold text-black">
+            High-speed data I/O semiconductor Chip
+          </strong>
           <br />
           FPGA/CPLD/ASIC design and manufacturing technology, possess TPU
           development capability
         </p>
-        <p className="mt-2">
-          <strong>Intelligent Pattern Analysis Algorithm</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Intelligent Pattern Analysis Algorithm
+          </strong>
           <br />
           Hybrid Cache algorithm that follows data pattern analysis
         </p>
-        <p className="mt-2">
-          <strong>OS and SSD optimization</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            OS and SSD optimization
+          </strong>
           <br />
           Device Driver optimization technology differing for each OS, storage
           resource management technology
         </p>
-        <p>
-          <strong>High-speed data I/O semiconductor Chip</strong>
+        <p className="text-black/90">
+          <strong className="font-bold text-black">
+            High-speed data I/O semiconductor Chip
+          </strong>
           <br />
           FPGA/CPLD/ASIC design and manufacturing technology, possess TPU
           development capability
@@ -143,40 +167,54 @@ export const ContactData = [
     title: "Awards",
     content: (
       <>
-        <p>
-          <strong>Awarded the Sejong Award at the KR Patent Awards</strong>
+        <p className="text-black/90">
+          <strong className="font-bold text-black">
+            Awarded the Sejong Award at the KR Patent Awards
+          </strong>
           <br />
           Received the highest domestic patent award for outstanding performance
           and energy-saving technology
         </p>
-        <p className="mt-2">
-          <strong>Certified by Korea Excellent Product Designation</strong>
+        <p className="mt-2 text-black/90 ">
+          <strong className="font-bold text-black">
+            Certified by Korea Excellent Product Designation
+          </strong>
           <br />
           Certification of the only excellent procurement registered product in
           Korea in the server field that has been recognized for its
           high-performance system quality
         </p>
-        <p className="mt-2">
-          <strong>Korean Green Technology Certificate</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Korean Green Technology Certificate
+          </strong>
         </p>
-        <p>
-          <strong>Awarded the Sejong Award at the KR Patent Awards</strong>
+        <p className="text-black/90">
+          <strong className="font-bold text-black">
+            Awarded the Sejong Award at the KR Patent Awards
+          </strong>
           <br />
           Received the highest domestic patent award for outstanding performance
           and energy-saving technology
         </p>
-        <p className="mt-2">
-          <strong>Certified by Korea Excellent Product Designation</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Certified by Korea Excellent Product Designation
+          </strong>
           <br />
           Certification of the only excellent procurement registered product in
           Korea in the server field that has been recognized for its
           high-performance system quality
         </p>
-        <p className="mt-2">
-          <strong>Korean Green Technology Certificate</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Korean Green Technology Certificate
+          </strong>
         </p>
-        <p>
-          <strong>Awarded the Sejong Award at the KR Patent Awards</strong>
+        <p className="mt-2 text-black/90">
+          <strong className="font-bold text-black">
+            Awarded the Sejong Award at the KR Patent Awards
+          </strong>
           <br />
           Received the highest domestic patent award for outstanding performance
           and energy-saving technology
