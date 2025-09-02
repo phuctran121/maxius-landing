@@ -17,7 +17,8 @@ type HomeClientProps = {
 export default function HomeClient({ themes, children }: HomeClientProps) {
   // Convert children -> array để dễ map/đếm
   const items = React.Children.toArray(children);
-  const total = items.length;
+  // ❌ const total = items.length;
+  const total = themes.length; // ✅ luôn đúng số section
 
   const { current, navigate } = useSidebar(); // 👈 lấy từ context
 
