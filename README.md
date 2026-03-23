@@ -37,23 +37,6 @@ To format specific files:
 npx prettier --write "src/**/*.{ts,tsx,js,jsx}"
 ```
 
-## Git hooks & formatting
-
-- **Husky** is enabled via `postinstall`.
-- **lint-staged** (configured in `package.json`) runs on staged files before commit:
-  - **Prettier** — `--write`
-  - **ESLint** — `--fix`
-
-The pre-commit hook runs `npx lint-staged` (see `.husky/pre-commit`).
-
-## Environment variables
-
-| Variable               | Purpose                                                                                                     |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Public site URL for metadata (e.g. Open Graph). Defaults to `https://mooskdas.vercel.app` in code if unset. |
-
-Set these in `.env.local` for local development and in your hosting provider’s dashboard for production.
-
 ## Project structure
 
 High-level layout of the `src` tree:
