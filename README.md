@@ -25,18 +25,6 @@ npm install
 | **lint**     | `npm run lint`     | Runs ESLint across the project.                                                                                            |
 | **lint:fix** | `npm run lint:fix` | Runs ESLint with `--fix` to auto-fix issues where possible.                                                                |
 
-There is no dedicated `format` script in `package.json`. For one-off formatting with Prettier:
-
-```bash
-npx prettier --write .
-```
-
-To format specific files:
-
-```bash
-npx prettier --write "src/**/*.{ts,tsx,js,jsx}"
-```
-
 ## Project structure
 
 High-level layout of the `src` tree:
@@ -79,6 +67,11 @@ src/
 **You must deploy this application to the Seoul region (`icn1`).** Configure your hosting so the **server / deployment region** is **Seoul (icn1)**.
 
 This is **required** for the integrated APIs (including the metal prices pipeline that talks to Korean market endpoints) to behave reliably. Running in distant regions can cause latency, timeouts, geo-related blocking, or inconsistent responses from upstream services.
+
+### Deployment Note
+
+**Server Region:** Must be set to **Seoul (`icn1`)**.
+_(Note: This is strictly required for the `/api/metal-prices` API to function properly)._
 
 ## Tech stack (summary)
 
