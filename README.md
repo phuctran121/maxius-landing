@@ -60,15 +60,11 @@ src/
 | ------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
 | `/api/metal-prices` | `GET`  | Returns normalized metal market data; backed by `https://koreagoldx.co.kr/api/main` with short-lived caching. |
 
+## Vercel configuration
+
+`vercel.json` registers a **cron** that hits `/api/metal-prices` every hour at minute 5 (`5 * * * *`), keeping data warm or refreshed on a schedule in production.
+
 ## Deployment
-
-### Region requirement: **icn1 (Seoul)**
-
-**You must deploy this application to the Seoul region (`icn1`).** Configure your hosting so the **server / deployment region** is **Seoul (icn1)**.
-
-This is **required** for the integrated APIs (including the metal prices pipeline that talks to Korean market endpoints) to behave reliably. Running in distant regions can cause latency, timeouts, geo-related blocking, or inconsistent responses from upstream services.
-
-### Deployment Note
 
 **Server Region:** Must be set to **Seoul (`icn1`)**.
 _(Note: This is strictly required for the `/api/metal-prices` API to function properly)._
