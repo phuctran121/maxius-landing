@@ -2,14 +2,10 @@
 
 A [Next.js](https://nextjs.org/) application (App Router) with internationalized routes, metal price data, and a component-driven UI. Built with React 19, TypeScript, Tailwind CSS v4, and [next-intl](https://next-intl-docs.vercel.app/).
 
----
-
 ## Prerequisites
 
 - **Node.js** — use an LTS version compatible with Next.js 16 (see [Next.js system requirements](https://nextjs.org/docs/app/getting-started/installation)).
 - **npm** — comes with Node; this project uses npm for scripts and lockfile (`package-lock.json`).
-
----
 
 ## Installation
 
@@ -18,10 +14,6 @@ From the project root:
 ```bash
 npm install
 ```
-
-`postinstall` runs **Husky**, which wires Git hooks (see [Git hooks & formatting](#git-hooks--formatting)).
-
----
 
 ## npm scripts
 
@@ -45,8 +37,6 @@ To format specific files:
 npx prettier --write "src/**/*.{ts,tsx,js,jsx}"
 ```
 
----
-
 ## Git hooks & formatting
 
 - **Husky** is enabled via `postinstall`.
@@ -56,8 +46,6 @@ npx prettier --write "src/**/*.{ts,tsx,js,jsx}"
 
 The pre-commit hook runs `npx lint-staged` (see `.husky/pre-commit`).
 
----
-
 ## Environment variables
 
 | Variable               | Purpose                                                                                                     |
@@ -65,8 +53,6 @@ The pre-commit hook runs `npx lint-staged` (see `.husky/pre-commit`).
 | `NEXT_PUBLIC_SITE_URL` | Public site URL for metadata (e.g. Open Graph). Defaults to `https://mooskdas.vercel.app` in code if unset. |
 
 Set these in `.env.local` for local development and in your hosting provider’s dashboard for production.
-
----
 
 ## Project structure
 
@@ -97,15 +83,11 @@ src/
 └── utils/                  # Formatting and shared helpers
 ```
 
----
-
 ## API routes
 
 | Route               | Method | Role                                                                                                          |
 | ------------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
 | `/api/metal-prices` | `GET`  | Returns normalized metal market data; backed by `https://koreagoldx.co.kr/api/main` with short-lived caching. |
-
----
 
 ## Deployment
 
@@ -115,8 +97,6 @@ src/
 
 This is **required** for the integrated APIs (including the metal prices pipeline that talks to Korean market endpoints) to behave reliably. Running in distant regions can cause latency, timeouts, geo-related blocking, or inconsistent responses from upstream services.
 
----
-
 ## Tech stack (summary)
 
 - **Framework:** Next.js 16 (App Router)
@@ -124,5 +104,3 @@ This is **required** for the integrated APIs (including the metal prices pipelin
 - **i18n:** next-intl
 - **Data:** TanStack React Query
 - **Quality:** ESLint (eslint-config-next), Prettier, Husky, lint-staged
-
----
